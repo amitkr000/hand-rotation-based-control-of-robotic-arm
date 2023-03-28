@@ -1,0 +1,26 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 60 #Hz
+    use_sim: True
+    
+    arm_controller:
+      type: position_controllers/JointGroupPositionController
+      
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+      
+arm_controller:
+  ros__parameters:
+    command_interfaces:
+      - effort
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    joints:
+      - rev1
+      - rev2
+      - rev3
+      - leftjoint
+      - r8joint
+      - gripjoint

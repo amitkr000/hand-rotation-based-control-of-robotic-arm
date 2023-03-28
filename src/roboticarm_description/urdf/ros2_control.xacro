@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<robot name="qdoggo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+<ros2_control name="GazeboSimSystem" type="system">
+  <hardware>
+  	<plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+  
+  <joint name="rev1">
+	<command_interface name="effort" />
+	<command_interface name="position" />
+	<state_interface name="position">
+	    <param name="initial_value">0.0</param>
+	</state_interface>
+	<state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="rev2">
+	<command_interface name="effort" />
+	<command_interface name="position" />
+	<state_interface name="position">
+	    <param name="initial_value">0.0</param>
+	</state_interface>
+	<state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="rev3">
+	<command_interface name="effort" />
+	<command_interface name="position" />
+	<state_interface name="position">
+	    <param name="initial_value">0.0</param>
+	</state_interface>
+	<state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="leftjoint">
+	<command_interface name="effort" />
+	<command_interface name="position" />
+	<state_interface name="position">
+	    <param name="initial_value">0.0</param>
+	</state_interface>
+	<state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="r8joint">
+	<command_interface name="effort" />
+	<command_interface name="position" />
+	<state_interface name="position">
+	    <param name="initial_value">0.0</param>
+	</state_interface>
+	<state_interface name="velocity"/>
+  </joint>
+  
+  <joint name="gripjoint">
+	<command_interface name="effort" />
+	<command_interface name="position" />
+	<state_interface name="position">
+	    <param name="initial_value">0.0</param>
+	</state_interface>
+	<state_interface name="velocity"/>
+  </joint>
+  
+</ros2_control>
+
+<gazebo>
+  <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+    <parameters>$(find roboticarm_description)/config/roboticarm_controller.yaml</parameters>
+  </plugin>
+</gazebo>
+
+</robot>
