@@ -45,7 +45,7 @@ def main(args=None):
 	rclpy.init(args=args)
 	image_pub = ImagePublisher()
 	rclpy.spin(image_pub)
-	image_publisher.destroy_node()
+	image_pub.destroy_node()
 	rclpy.shutdown()
 	
 	

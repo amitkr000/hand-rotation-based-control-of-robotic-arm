@@ -6,6 +6,8 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 
+
+
 class ImageSubscriber(Node):
 	
 	def __init__(self):
@@ -33,7 +35,7 @@ def main(args=None):
 	
 	rclpy.spin(image_sub)
 	
-	image_subscriber.destroy_node()
+	image_sub.destroy_node()
 	
 	rclpy.shotdown()
 	

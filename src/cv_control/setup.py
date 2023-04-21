@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'cv_control'
 
@@ -7,8 +9,7 @@ setup(
     version='0.0.0',
     packages=[package_name],
     data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
+        ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
@@ -21,7 +22,9 @@ setup(
     entry_points={
         'console_scripts': [
         	"cam_pub = cv_control.cam_pub:main",
-        	"cam_sub = cv_control.cam_sub:main"
+        	"cam_sub = cv_control.cam_sub:main",
+        	"handpose_pub = cv_control.handpose_pub:main",
+        	"joint = cv_control.joint:main",
         ],
     },
 )
